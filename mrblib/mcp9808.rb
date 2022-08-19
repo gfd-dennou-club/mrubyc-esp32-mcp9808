@@ -23,12 +23,12 @@ class MCP9808
 
   def read8(reg)
     @i2c.write(MCP9808::I2CADDR_DEFAULT, reg)
-    @i2c.read_integer(MCP9808::I2CADDR_DEFAULT, 1)[0]
+    @i2c.readfrom(MCP9808::I2CADDR_DEFAULT, 1)[0]
   end
 
   def read16(reg)
     @i2c.write(MCP9808::I2CADDR_DEFAULT, reg)
-    data = @i2c.read_integer(MCP9808::I2CADDR_DEFAULT, 2)
+    data = @i2c.readfrom(MCP9808::I2CADDR_DEFAULT, 2)
     (data[0] << 8) | data[1]
   end
 
