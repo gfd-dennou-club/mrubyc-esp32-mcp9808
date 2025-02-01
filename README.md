@@ -10,7 +10,7 @@ https://files.seeedstudio.com/wiki/Grove-I2C_High_Accuracy_Temperature_Sensor-MC
 ## sample code
 
 ```ruby
-i2c = I2C.new(22, 21)
+i2c = I2C.new()
 mcp9808 = MCP9808.new(i2c)
 
 if !mcp9808.begin
